@@ -1,0 +1,46 @@
+:root {
+  /* Dark Mode: Pure Black */
+  --bg-color: #000000; 
+  --text-color: #a3acba;
+  --text-h: #ffffff;
+  --accent-color: #28a745; /* Green theme color */
+}
+
+body.light-mode {
+  /* Light Mode: Pure White */
+  --bg-color: #ffffff;
+  --text-color: #444444;
+  --text-h: #000000;
+  --accent-color: #218838;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* සියලුම Sections විනිවිද පෙනෙන (Transparent) කිරීම */
+section, 
+.hero-section, 
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section,
+#root {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-h) !important;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+}

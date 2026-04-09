@@ -1,0 +1,190 @@
+/* =========================
+   GLOBAL THEME VARIABLES
+========================= */
+:root {
+  /* Dark Mode (Default) */
+  --bg: #16171d;
+  --section-bg: rgba(22, 23, 29, 0.88);
+  --text: #a3acba;
+  --text-h: #f3f4f6;
+  --border: #2e303a;
+  --accent: #c084fc;
+  --card-bg: rgba(25, 26, 34, 0.88);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Light Mode */
+body.light-mode {
+  --bg: #ffffff;
+  --section-bg: rgba(255, 255, 255, 0.88);
+  --text: #5f5968;
+  --text-h: #08060d;
+  --border: #e5e4e7;
+  --accent: #aa3bff;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Root containers */
+#root,
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg);
+}
+
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
+.background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* All site content above animation */
+.content-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   GLOBAL SECTION STYLING
+========================= */
+section,
+.hero-section,
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section {
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  color: inherit;
+}
+
+/* Optional: if you want sections to have subtle glass feel */
+/*
+.hero-section,
+.about-section,
+.skills-section,
+.projects-section,
+.contact-section {
+  background-color: var(--section-bg) !important;
+  backdrop-filter: blur(2px);
+}
+*/
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-h);
+  transition: color 0.3s ease;
+  margin-top: 0;
+}
+
+p {
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   COMMON CARDS / BOXES
+========================= */
+.info-card,
+.project-card,
+.skill-card,
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.info-card:hover,
+.project-card:hover,
+.skill-card:hover,
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   BUTTON BASE IMPROVEMENT
+========================= */
+button,
+.btn {
+  transition: all 0.3s ease !important;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SCROLLBAR (OPTIONAL NICE LOOK)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  section,
+  .hero-section,
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .contact-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

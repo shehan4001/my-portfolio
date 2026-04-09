@@ -1,0 +1,217 @@
+/* ================= GLOBAL SCROLL FIX ================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* Navbar height එකට අනුව adjust කරන්න */
+}
+
+/* ================= SECTION WRAPPER ================= */
+.skills-section-wrapper {
+  background: var(--bg);
+  padding: 100px 8%;
+  padding-top: 120px; /* Extra space so title never cuts */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Navbar link click කළ විට title full show වෙන්න */
+  scroll-margin-top: 110px;
+}
+
+/* ================= TITLES ================= */
+.skills-main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0d6efd !important;
+  margin-bottom: 10px;
+}
+
+.skills-description-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  color: #ffffff;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+/* Light Mode */
+body.light-mode .skills-description-text {
+  color: #333;
+  opacity: 1;
+}
+
+/* ================= CONTAINER ================= */
+.skills-container-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ================= CARDS ================= */
+.skills-card {
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.3s;
+  flex: 1;
+  min-width: 320px;
+}
+
+body.light-mode .skills-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+.section-header h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+body.light-mode .section-header h3 {
+  color: #000;
+}
+
+/* ================= FILTER BUTTONS ================= */
+.category-filter {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.filter.active {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+}
+
+body.light-mode .filter {
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+/* ================= SKILLS ================= */
+.skill-item {
+  margin-bottom: 22px;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+body.light-mode .name {
+  color: #000;
+}
+
+.percent {
+  font-size: 0.8rem;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+body.light-mode .percent {
+  color: #000;
+}
+
+/* ================= PROGRESS BAR ================= */
+.bar {
+  height: 6px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.light-mode .bar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.fill {
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+
+/* Colors */
+.fill.teal { background: #2dd4bf; }
+.fill.yellow { background: #facc15; }
+.fill.pink { background: #f472b6; }
+
+/* ================= RIGHT SIDE ================= */
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+body.light-mode .pill {
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.tool-item {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+body.light-mode .tool-item {
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .skills-container-row {
+    flex-direction: column;
+  }
+}

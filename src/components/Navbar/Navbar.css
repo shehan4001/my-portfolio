@@ -1,0 +1,151 @@
+/* -------------------------------------
+    GLASSMORPHISM NAVBAR & SECTION STYLING
+------------------------------------- */
+
+/* Sections */
+section {
+  position: relative;
+  z-index: 1;
+  padding-top: 30px !important; 
+  padding-bottom: 70px !important;
+  margin-top: -55px !important;
+  background-color: transparent !important;
+  transition: all 0.4s ease;
+}
+
+/* Hero Section - Brand click fix ඇතුළත් කර ඇත */
+.hero-section {
+  margin-top: 0 !important;
+  padding-top: 140px !important; /* Brand click කළාම content එක පෙනෙන්න ඉඩ තබා ඇත */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section Titles & Descriptions */
+section h2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-bottom: 15px !important;
+  font-weight: 800;
+  text-align: center;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+}
+
+.section-subtitle, .about-description {
+  max-width: 800px;
+  margin: 0 auto 35px auto !important;
+  text-align: center;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* Navbar Styling */
+.custom-navbar {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 10px 0;
+  z-index: 1100;
+}
+
+.navbar-dark-bg { 
+  background-color: rgba(12, 12, 12, 0.8) !important; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.navbar-light-bg { 
+  background-color: rgba(255, 255, 255, 0.8) !important; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+}
+
+.navbar-brand { font-weight: 800; font-size: 1.6rem !important; }
+
+/* Desktop Navigation */
+@media (min-width: 992px) {
+  .navbar-nav { gap: 10px; }
+
+  .nav-custom-link {
+    padding: 8px 20px !important;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .nav-custom-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #0d6efd;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 10px;
+  }
+
+  .nav-custom-link:hover::after, 
+  .nav-custom-link.active-tab::after { 
+    width: 65%; 
+  }
+}
+
+/* Active Tab Colors */
+.navbar-light-bg .nav-custom-link.active-tab { 
+  color: #0d6efd !important; 
+  font-weight: 700; 
+}
+
+.navbar-dark-bg .nav-custom-link.active-tab { 
+  color: #ffffff !important; 
+  font-weight: 700; 
+}
+
+/* Theme Toggle Button & Icon Colors */
+.theme-toggle-wrapper {
+  cursor: pointer;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+  margin-left: 15px;
+  transition: all 0.3s ease;
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+  transition: transform 0.4s ease;
+}
+
+/* Sun icon color update */
+.sun-icon {
+  color: #ffcc00 !important; 
+  filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
+}
+
+.moon-icon {
+  color: #5c7cfa !important;
+}
+
+.navbar-light-bg .theme-toggle-wrapper {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.navbar-dark-bg .theme-toggle-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+  section { margin-top: -15px !important; padding-top: 40px !important; }
+  .hero-section { padding-top: 140px !important; } /* Mobile fix */
+  .navbar-collapse {
+    background: rgba(20, 20, 20, 0.95);
+    margin-top: 15px; padding: 20px; border-radius: 20px;
+    text-align: center;
+  }
+  .nav-custom-link { margin: 8px 0 !important; display: block; }
+}
