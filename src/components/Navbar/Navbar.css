@@ -6,17 +6,18 @@
 section {
   position: relative;
   z-index: 1;
-  padding-top: 30px !important; 
-  padding-bottom: 70px !important;
-  margin-top: -55px !important;
-  background-color: transparent !important;
+  padding-top: clamp(0px, 1.5vw, 15px);
+  padding-bottom: clamp(40px, 6vw, 70px);
+  margin-top: 0;
+  background-color: transparent;
   transition: all 0.4s ease;
+  scroll-margin-top: clamp(80px, 10vw, 110px);
 }
 
-/* Hero Section - Brand click fix ඇතුළත් කර ඇත */
+/* Hero Section */
 .hero-section {
-  margin-top: 0 !important;
-  padding-top: 140px !important; /* Brand click කළාම content එක පෙනෙන්න ඉඩ තබා ඇත */
+  margin-top: 0;
+  padding-top: clamp(60px, 8vw, 90px);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,105 +25,137 @@ section {
   align-items: center;
 }
 
-/* Section Titles & Descriptions */
+/* Section Titles */
 section h2 {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  margin-bottom: 15px !important;
+  margin: 0 0 12px 0;
   font-weight: 800;
   text-align: center;
-  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-size: clamp(1.8rem, 5vw, 3rem);
 }
 
-.section-subtitle, .about-description {
+/* Subtext */
+.section-subtitle,
+.about-description {
   max-width: 800px;
-  margin: 0 auto 35px auto !important;
+  margin: 0 auto clamp(20px, 4vw, 35px);
   text-align: center;
   opacity: 0.85;
   line-height: 1.6;
+  padding-inline: clamp(10px, 3vw, 20px);
 }
 
-/* Navbar Styling */
+/* Navbar */
 .custom-navbar {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  padding: 10px 0;
+  padding: clamp(6px, 1.5vw, 10px) 0;
   z-index: 1100;
 }
 
-.navbar-dark-bg { 
-  background-color: rgba(12, 12, 12, 0.8) !important; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+.navbar-inner {
+  width: 100%;
+  max-width: 100% !important;
+  padding-left: clamp(16px, 4vw, 48px);
+  padding-right: clamp(16px, 4vw, 48px);
+  display: flex;
+  align-items: center;
 }
 
-.navbar-light-bg { 
-  background-color: rgba(255, 255, 255, 0.8) !important; 
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+.navbar-dark-bg {
+  background-color: rgba(12, 12, 12, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbar-brand { font-weight: 800; font-size: 1.6rem !important; }
-
-/* Desktop Navigation */
-@media (min-width: 992px) {
-  .navbar-nav { gap: 10px; }
-
-  .nav-custom-link {
-    padding: 8px 20px !important;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s ease;
-    color: inherit;
-    cursor: pointer;
-  }
-
-  .nav-custom-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -2px;
-    left: 50%;
-    background-color: #0d6efd;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-    border-radius: 10px;
-  }
-
-  .nav-custom-link:hover::after, 
-  .nav-custom-link.active-tab::after { 
-    width: 65%; 
-  }
+.navbar-light-bg {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Active Tab Colors */
-.navbar-light-bg .nav-custom-link.active-tab { 
-  color: #0d6efd !important; 
-  font-weight: 700; 
+.navbar-brand {
+  font-weight: 800;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  white-space: nowrap;
+  margin-right: auto !important;
+  flex-shrink: 0;
+  margin-left: 30px;
 }
 
-.navbar-dark-bg .nav-custom-link.active-tab { 
-  color: #ffffff !important; 
-  font-weight: 700; 
+.navbar-collapse {
+  flex-grow: 0 !important;
 }
 
-/* Theme Toggle Button & Icon Colors */
+.nav-right {
+  margin-left: auto !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1vw, 12px);
+}
+
+/* Nav Links */
+.nav-custom-link {
+  padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 20px);
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Underline animation */
+.nav-custom-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -2px;
+  left: 50%;
+  background-color: #0d6efd;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.nav-custom-link:hover::after,
+.nav-custom-link.active-tab::after {
+  width: 65%;
+}
+
+/* Active colors */
+.navbar-light-bg .nav-custom-link.active-tab {
+  color: #0d6efd !important;
+  font-weight: 700;
+}
+
+.navbar-dark-bg .nav-custom-link.active-tab {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Theme Toggle */
 .theme-toggle-wrapper {
   cursor: pointer;
-  width: 40px; height: 40px;
-  display: flex; align-items: center; justify-content: center;
+  width: clamp(34px, 4vw, 40px);
+  height: clamp(34px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 12px;
-  margin-left: 15px;
+  margin-left: clamp(8px, 1.5vw, 15px);
   transition: all 0.3s ease;
 }
 
 .theme-icon {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   transition: transform 0.4s ease;
 }
 
-/* Sun icon color update */
 .sun-icon {
-  color: #ffcc00 !important; 
+  color: #ffcc00 !important;
   filter: drop-shadow(0 0 5px rgba(255, 204, 0, 0.5));
 }
 
@@ -138,14 +171,34 @@ section h2 {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Mobile Responsiveness */
+/* Mobile */
 @media (max-width: 991px) {
-  section { margin-top: -15px !important; padding-top: 40px !important; }
-  .hero-section { padding-top: 140px !important; } /* Mobile fix */
-  .navbar-collapse {
-    background: rgba(20, 20, 20, 0.95);
-    margin-top: 15px; padding: 20px; border-radius: 20px;
-    text-align: center;
+  .navbar-inner {
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  .nav-custom-link { margin: 8px 0 !important; display: block; }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar-nav {
+    margin-left: 0;
+  }
+
+  .nav-custom-link {
+    display: block;
+    margin: 6px 0;
+  }
+
+  .theme-toggle-wrapper {
+    margin: 12px auto 0;
+  }
 }

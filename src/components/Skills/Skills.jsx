@@ -24,29 +24,27 @@ const Skills = () => {
       : technicalSkills.filter(skill => skill.category === selectedCategory);
 
   return (
-    <section className="skills-section-wrapper py-5" id="skills">
+    <section className="skills-section-wrapper" id="skills">
       <Container>
 
         {/* TITLE */}
-        <div className="text-center mb-5">
+        <div className="text-center skills-title-wrap">
           <h2 className="skills-main-title fw-bold">Skills & Expertise</h2>
           <p className="skills-description-text mx-auto">
             A blend of technical expertise, management strengths, and collaborative tools.
           </p>
         </div>
 
-        <Row className="g-4">
+        <Row className="g-4 align-items-stretch">
 
           {/* LEFT */}
-          <Col lg={7}>
-            <div className="skills-card">
+          <Col lg={7} className="d-flex">
+            <div className="skills-card technical-card">
 
               <div className="section-header">
-
                 <h3>Technical Skills</h3>
               </div>
 
-              {/* CATEGORY FILTER */}
               <div className="category-filter">
                 {['All', 'Frontend', 'Backend', 'Language'].map(cat => (
                   <span
@@ -87,13 +85,11 @@ const Skills = () => {
           </Col>
 
           {/* RIGHT */}
-          <Col lg={5}>
+          <Col lg={5} className="d-flex">
             <div className="right-side">
 
-              {/* Soft Skills */}
               <div className="skills-card">
                 <div className="section-header">
-
                   <h3>Soft Skills</h3>
                 </div>
 
@@ -104,10 +100,8 @@ const Skills = () => {
                 </div>
               </div>
 
-              {/* Tools */}
               <div className="skills-card">
                 <div className="section-header">
-
                   <h3>Tools & Platforms</h3>
                 </div>
 
