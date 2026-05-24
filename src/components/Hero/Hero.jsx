@@ -3,7 +3,7 @@ import { Container, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Hero.css';
-import profileImg from '../../assets/profile.jpg';
+import profileImg from '../../assets/profile.png';
 
 const Hero = () => {
   const handleScrollToSection = (sectionId) => {

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./About.css";
-import aboutImg from "../../assets/profile.jpg";
+import aboutImg from "../../assets/profile.png";
 
 const About = ({ isDarkMode }) => {
   return (

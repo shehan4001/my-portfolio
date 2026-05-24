@@ -84,22 +84,6 @@ const Contact = ({ darkMode }) => {
               </div>
               <span>Open for freelance & full-time</span>
             </div>
-
-            <div className="info-card">
-              <div className="info-header">
-                <FaClock className="icon" />
-                Working Hours
-              </div>
-              <span>Mon - Fri | 9AM - 6PM</span>
-            </div>
-
-            <div className="info-card">
-              <div className="info-header">
-                <FaBolt className="icon" />
-                Response Time
-              </div>
-              <span>Within 24 hours</span>
-            </div>
           </div>
         </div>
 
@@ -109,7 +93,7 @@ const Contact = ({ darkMode }) => {
           <form ref={form} onSubmit={sendEmail} className="form-wrapper">
             <input type="text" name="user_name" placeholder="Full Name" required />
             <input type="email" name="user_email" placeholder="Email Address" required />
-            <textarea name="message" placeholder="Your Message..." rows="6" required></textarea>
+            <textarea name="message" placeholder="Your Message..." rows="2" required></textarea>
             <button type="submit" className="send-btn">Send Message</button>
           </form>
         </div>

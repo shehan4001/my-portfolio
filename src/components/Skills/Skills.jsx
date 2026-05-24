@@ -14,7 +14,7 @@ const Skills = () => {
   ];
 
   const softSkills = ['Teamwork','Problem Solving','Communication','Creativity','Adaptability','HR Management'];
-  const tools = ['Git','GitHub','Visual Studio','VS Code','Figma','Canva','ClickUp','MS Office'];
+  const tools = ['GitHub','Visual Studio','VS Code','Eclipse','IDLE','Figma','Canva',,'MS Office'];
 
   const [selectedCategory, setSelectedCategory] = useState('All');
 

@@ -33,9 +33,9 @@ body.light-mode .projects-main-desc {
 }
 
 .project-card {
-  width: 100%;
+  width: 362px;
   max-width: 100%;
-  min-height: clamp(420px, 55vw, 480px);
+  min-height: clamp(470px, 60vw, 530px);
   background: rgba(255,255,255,0.03);
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.1);
@@ -79,7 +79,18 @@ body.light-mode .projects-main-desc {
   font-weight: 700;
 }
 
-.github-btn {
+.project-desc-text {
+  color: #bfc5d2;
+  font-size: clamp(0.95rem, 2.4vw, 1.05rem);
+  line-height: 1.6;
+  text-align: justify;
+  margin: 10px 0 15px 0;
+  flex-grow: 1;
+}
+
+
+.github-btn,
+.demo-video-btn {
   margin-top: 15px;
   padding: clamp(11px, 2vw, 12px);
   border-radius: 10px;
@@ -96,7 +107,8 @@ body.light-mode .projects-main-desc {
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-.github-btn:hover {
+.github-btn:hover,
+.demo-video-btn:hover {
   background: #f1f1f1;
 }
 
@@ -113,22 +125,25 @@ body.light-mode .project-desc-text {
   color: #333;
 }
 
-body.light-mode .github-btn {
+body.light-mode .github-btn,
+body.light-mode .demo-video-btn {
   background: #111827;
   color: #ffffff;
   border: none;
 }
 
-body.light-mode .github-btn svg {
+body.light-mode .github-btn svg,
+body.light-mode .demo-video-btn svg {
   color: #ffffff;
 }
 
 @media (max-width: 480px) {
   .project-card {
-    min-height: 430px;
+    min-height: 480px;
   }
 
-  .github-btn {
+  .github-btn,
+  .demo-video-btn {
     width: 100%;
   }
 }
